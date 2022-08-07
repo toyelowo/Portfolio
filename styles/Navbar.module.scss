@@ -1,0 +1,42 @@
+$nav-font-weight: 300;
+$nav-font-size: 24px;
+$nav-text-color-light-mode: #131212;
+
+.Nav {
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  color: $nav-text-color-light-mode;
+  font-weight: $nav-font-weight;
+  text-transform: uppercase;
+}
+
+.Nav__title {
+  font-size: $nav-font-size;
+  font-weight: $nav-font-weight;
+  line-height: 32.4px;
+}
+
+.Nav__title--span {
+  display: block;
+}
+
+.Nav__List {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-size: $nav-font-size;
+  list-style-type: none;
+}
+
+.Nav__List__item {
+  padding: 0 10px;
+
+  &:hover {
+    color: #b15601;
+  }
+}
