@@ -1,5 +1,51 @@
-.About {
-  min-height: 100vh;
-  min-width: 100vw;
-  padding: 0 30px;
+.TwoColumnWrapper {
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  min-height: 100%;
+}
+
+// .RightColumn {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// }
+
+.title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  margin: 0;
+
+  text-transform: uppercase;
+}
+
+.Behavioural {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.summary {
+  font-weight: 300;
+  font-size: 38.83px;
+  line-height: 120%;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.description {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+
+  /* portfolio/text/main */
+  color: #323232;
+
+  width: 50%;
+}
+
+.Skills {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  grid-gap: 31px;
 }
