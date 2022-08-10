@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Image from 'next/image';
 
 import {Navbar} from '../Navbar';
+import { ThemeCtx } from '../../store';
 import {Page} from '../ui';
 import styles from '/styles/Landing.module.scss';
 
 export function Landing(){
+  const themeCtx = useContext(ThemeCtx);
+
   return (
     // <Page>
       <div className={styles.LandingWrapper}>
@@ -17,15 +20,17 @@ export function Landing(){
               <p>I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Upstatement.</p>
               </div>
               <div className={styles.LightModeWrapper}>
-              <Image
-                  layout='fixed'
-                  src="/Bulb.png"
-                  alt="Picture of a bulb"
-                  width="15px"
-                  height="15px" 
-              />
-              
-              <p className={styles.LightMode}>Light Mode</p>
+                <button className={styles.LightModeIcon} onClick={themeCtx.toggleTheme}>
+                  <Image
+                    layout='fixed'
+                    src="/Bulb.png"
+                    alt="Picture of a bulb"
+                    width="15px"
+                    height="15px" 
+                  />
+                </button>
+
+                <p className={styles.LightMode}>{themeCtx.theme}</p>
               </div>
           </div>
         </div>
