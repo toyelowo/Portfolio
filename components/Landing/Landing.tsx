@@ -2,16 +2,17 @@ import React, {useContext} from 'react';
 import Image from 'next/image';
 
 import {Navbar} from '../Navbar';
-import { ThemeCtx } from '../../store';
+import { ThemeCtx, ThemeEnum } from '../../store';
 import {Page} from '../ui';
 import styles from '/styles/Landing.module.scss';
 
 export function Landing(){
   const themeCtx = useContext(ThemeCtx);
+  const themeClass = themeCtx.theme === ThemeEnum.Light ? 'light-mode' : 'dark-mode';
 
   return (
     // <Page>
-      <div className={styles.LandingWrapper}>
+      <div className={`${styles.LandingWrapper} ${themeClass}`}>
 
         <Navbar />
         <div className={styles.DescriptionWrapper}>

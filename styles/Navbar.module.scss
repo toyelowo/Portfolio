@@ -1,6 +1,5 @@
 $nav-font-weight: 300;
 $nav-font-size: 24px;
-$nav-text-color-light-mode: #131212;
 
 .Nav {
   // display: flex;
@@ -9,7 +8,7 @@ $nav-text-color-light-mode: #131212;
   display: grid;
   grid-template-columns: 1fr auto;
 
-  color: $nav-text-color-light-mode;
+  color: var(--main-text);
   font-weight: $nav-font-weight;
   text-transform: uppercase;
 }
@@ -37,6 +36,6 @@ $nav-text-color-light-mode: #131212;
   padding: 0 10px;
 
   &:hover {
-    color: #b15601;
+    color: var(--button-hover);
   }
 }
