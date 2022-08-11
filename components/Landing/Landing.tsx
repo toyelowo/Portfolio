@@ -17,22 +17,22 @@ export function Landing(){
         <Navbar />
         <div className={styles.DescriptionWrapper}>
           <div className={styles.DescriptionInnerWrapper}>
-              <div className={styles.Description}>
-              <p>I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Upstatement.</p>
-              </div>
-              <div className={styles.LightModeWrapper}>
-                <button className={styles.LightModeIcon} onClick={themeCtx.toggleTheme}>
-                  <Image
-                    layout='fixed'
-                    src="/Bulb.png"
-                    alt="Picture of a bulb"
-                    width="15px"
-                    height="15px" 
-                  />
-                </button>
+            <div className={styles.Description}>
+            <p>I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Upstatement.</p>
+            </div>
+            <div className={styles.LightModeWrapper}>
+              <button className={styles.LightModeIcon} onClick={themeCtx.toggleTheme}>
+                <Image
+                  layout='fixed'
+                  src="/Bulb.png"
+                  alt="Picture of a bulb"
+                  width="15px"
+                  height="15px" 
+                />
+              </button>
 
-                <p className={styles.LightMode}>{themeCtx.theme}</p>
-              </div>
+              <p className={styles.LightMode}>{themeCtx.theme}</p>
+            </div>
           </div>
         </div>
 
