@@ -4,13 +4,13 @@ interface Props {
     children: React.ReactNode;
 }
 
-enum Theme {
+export enum ThemeEnum {
     Light = 'Light Mode',
     Dark = 'Dark Mode',
 }
 
 const initialValues = {
-    theme: Theme.Light,
+    theme: ThemeEnum.Light,
     toggleTheme: () => {}
 }
 
@@ -18,10 +18,10 @@ export const ThemeCtx = createContext(initialValues);
 
 const LOCAL_STORAGE_KEY = 'tayo-portfolio-theme';
 export function ThemeProvider({children}: Props){
-    const [theme, setTheme] = useState<Theme>(Theme.Light);
+    const [theme, setTheme] = useState<ThemeEnum>(ThemeEnum.Light);
 
     useEffect(() => {
-        setTheme(localStorage.getItem(LOCAL_STORAGE_KEY) === Theme.Dark ? Theme.Dark : Theme.Light); 
+        setTheme(localStorage.getItem(LOCAL_STORAGE_KEY) === ThemeEnum.Dark ? ThemeEnum.Dark : ThemeEnum.Light); 
     }, []);
 
     useEffect(() => {
@@ -30,7 +30,7 @@ export function ThemeProvider({children}: Props){
 
     const toggleTheme = () => {
         setTheme((prevTheme) => 
-            prevTheme === Theme.Light ? Theme.Dark : Theme.Light
+            prevTheme === ThemeEnum.Light ? ThemeEnum.Dark : ThemeEnum.Light
         )
     }
 

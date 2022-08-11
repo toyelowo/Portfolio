@@ -20,9 +20,28 @@ $theme-colors: (
     "primary-40": #111111,
     "primary-50": #0a0a0a,
     "orange": #ee7402,
-    "main-text" #bdbdbd,
-    "secondary-text" #939393,
+    "main-text": #bdbdbd,
+    "secondary-text": #939393,
     "header-text": #cacaca,
     "main-bg": #121212,
   ),
 );
+
+// credit to https://www.thisdot.co/blog/how-to-implement-a-dark-to-light-mode-feature-in-your-react-sass-project
+@mixin get-themes($selectedTheme) {
+  @each $theme, $theme-map in $theme-colors {
+    @if $theme == $selectedTheme {
+      @each $key, $color in $theme-map {
+        --#{$key}: #{$color};
+      }
+    }
+  }
+}
+
+.dark-mode {
+  @include get-themes("dark");
+}
+
+.light-mode {
+  @include get-themes("light");
+}
