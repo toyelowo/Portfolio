@@ -28,8 +28,8 @@ export function ThemeProvider({children}: Props){
   }, []);
 
   useEffect(() => {
-    // useEffect runs on first render so we don't want this to run until the 
-    // setTheme is actually called. If we don't check this we'll
+    // useEffect runs on first render so we don't want the 'setItem' to run until the 
+    // 'setTheme' is actually called
     if(!hasMountedRef.current){
       hasMountedRef.current = true;
       return;
