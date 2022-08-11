@@ -17,6 +17,7 @@
   margin: 0;
 
   text-transform: uppercase;
+  color: var(--primary-50);
 }
 
 .Behavioural {
@@ -31,6 +32,8 @@
   line-height: 120%;
   text-transform: uppercase;
   margin: 0;
+
+  color: var(--header-text);
 }
 
 .description {
@@ -38,10 +41,12 @@
   font-size: 24px;
   line-height: 36px;
 
-  /* portfolio/text/main */
-  color: #323232;
-
+  color: var(--main-text);
   width: 50%;
+}
+
+.SkillsWrapper {
+  color: var(--main-text);
 }
 
 .Skills {
