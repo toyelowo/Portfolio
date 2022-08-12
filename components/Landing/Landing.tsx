@@ -18,7 +18,7 @@ export function Landing(){
         <div className={styles.DescriptionWrapper}>
           <div className={styles.DescriptionInnerWrapper}>
             <div className={styles.Description}>
-            <p>I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Upstatement.</p>
+            <p>I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Shopify.</p>
             </div>
             <div className={styles.LightModeWrapper}>
               <button className={styles.LightModeIcon} onClick={themeCtx.toggleTheme}>

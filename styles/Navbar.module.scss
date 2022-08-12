@@ -2,11 +2,9 @@ $nav-font-weight: 300;
 $nav-font-size: 24px;
 
 .Nav {
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: space-between;
   display: grid;
   grid-template-columns: 1fr auto;
+  margin-top: 10px;
 
   color: var(--main-text);
   font-weight: $nav-font-weight;
