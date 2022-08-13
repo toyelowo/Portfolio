@@ -1,0 +1,43 @@
+.ModalWrapper {
+  position: absolute;
+  background-color: var(--main-bg);
+  color: var(--main-text);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 30px;
+  z-index: 1000;
+}
+
+.Heading {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Heading__title {
+  text-transform: uppercase;
+}
+
+.CloseModalButton {
+  border: none;
+  background: transparent;
+  color: var(--main-text);
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.NavWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  justify-content: space-between;
+  align-items: flex-end;
+  list-style: none;
+  padding-right: 100px;
+  text-transform: uppercase;
+}

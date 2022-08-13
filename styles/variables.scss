@@ -1,29 +1,31 @@
-$primary-00: #323232;
-
 $theme-colors: (
   "light": (
+    "button-hover": #b15601,
+    "header-text": #111111,
+    "main-bg": #fafafa,
+    "main-text": #323232,
+    "primary-00": #323232,
     "primary-10": #2a2a2a,
     "primary-20": #3c5343,
     "primary-30": #191919,
     "primary-40": #111111,
     "primary-50": #0a0a0a,
-    "button-hover": #b15601,
-    "main-text": #323232,
     "secondary-text": #525050,
-    "header-text": #111111,
-    "main-bg": #fafafa,
+    "theme-icon": #575151,
   ),
   "dark": (
+    "button-hover": #ee7402,
+    "header-text": #cacaca,
+    "main-bg": #121212,
+    "main-text": #bdbdbd,
+    "primary-00": #323232,
     "primary-10": #545454,
     "primary-20": #767676,
     "primary-30": #989898,
     "primary-40": #bbbbbb,
     "primary-50": #d6d6d6,
-    "button-hover": #ee7402,
-    "main-text": #bdbdbd,
     "secondary-text": #939393,
-    "header-text": #cacaca,
-    "main-bg": #121212,
+    "theme-icon": #d3d3d3,
   ),
 );
 

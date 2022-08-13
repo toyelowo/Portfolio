@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 
+import { Modal } from '../Modal';
 import { ThemeCtx, ThemeEnum } from '../../../store';
 import styles from '/styles/Page.module.scss';
 
@@ -12,8 +13,11 @@ export function Page({children}: Props){
     const themeClass = themeCtx.theme === ThemeEnum.Light ? 'light-mode' : 'dark-mode';
 
     return (
+      <>
       <div className={`${styles.Page} ${themeClass}`}>
+        <Modal />
         {children}
       </div>
+      </>
     )
 }
