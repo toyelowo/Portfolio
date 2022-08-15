@@ -7,7 +7,7 @@ import styles from '/styles/Navbar.module.scss';
 import { ModalCtx } from '../../store';
 
 export function Navbar() {
-  const {openModal} = useContext(ModalCtx);
+  const { openModal } = useContext(ModalCtx);
 
   return (
     <nav className={styles.Nav}>
@@ -22,13 +22,19 @@ export function Navbar() {
 
       <ul className={styles.Nav__List}>
         <li className={styles.Nav__List__item}>
-          <Link href="/about"><a>About</a></Link>
+          <Link href="/about">
+            <a>About</a>
+          </Link>
         </li>
         <li className={styles.Nav__List__item}>
-          <Link href="/work"><a>Work</a></Link>
-          </li>
+          <Link href="/work">
+            <a>Work</a>
+          </Link>
+        </li>
         <li className={styles.Nav__List__item}>
-          <Link href="/contact"><a>Contact</a></Link>
+          <Link href="/contact">
+            <a>Contact</a>
+          </Link>
         </li>
       </ul>
 
@@ -36,5 +42,5 @@ export function Navbar() {
         <FontAwesomeIcon icon={faBars} />
       </button>
     </nav>
-  )
+  );
 }

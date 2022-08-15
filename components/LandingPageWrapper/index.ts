@@ -1,1 +1,1 @@
-export {LandingPageWrapper} from './LandingPageWrapper';
+export { LandingPageWrapper } from './LandingPageWrapper';

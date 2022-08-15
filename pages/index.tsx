@@ -1,8 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 
-import {LandingPageWrapper, Landing as LandingPage} from '../components';
+import { LandingPageWrapper, Landing as LandingPage } from '../components';
 
 const Home: NextPage = () => {
   return (
@@ -12,14 +11,14 @@ const Home: NextPage = () => {
         <meta name="description" content="Web development portfolio for Tayo" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       <main>
         <LandingPageWrapper>
           <LandingPage />
         </LandingPageWrapper>
-      </main> 
+      </main>
     </>
-  )
-}
+  );
+};
 
 export default Home;

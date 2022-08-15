@@ -1,8 +1,7 @@
-import '../styles/globals.scss'
+import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 
-import {ModalProvider, ThemeProvider} from '../store';
-import {Modal} from '../components';
+import { ModalProvider, ThemeProvider } from '../store';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -14,4 +13,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp
+export default MyApp;

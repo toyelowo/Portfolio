@@ -1,4 +1,4 @@
-import {createContext, useState} from 'react';
+import { createContext, useState } from 'react';
 
 interface Props {
   children: React.ReactNode;
@@ -7,18 +7,18 @@ interface Props {
 export const ModalCtx = createContext({
   isModalOpen: false,
   openModal: () => {},
-  closeModal: () => {},
+  closeModal: () => {}
 });
 
-export function ModalProvider({children}: Props) {
+export function ModalProvider({ children }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <ModalCtx.Provider value={{isModalOpen, openModal, closeModal}}>
+    <ModalCtx.Provider value={{ isModalOpen, openModal, closeModal }}>
       {children}
     </ModalCtx.Provider>
-  )
+  );
 }
