@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { Modal } from '../Modal';
+import { Modal } from '../../Modal';
 import { ThemeCtx, ThemeEnum } from '../../../store';
 import styles from '/styles/Page.module.scss';
 

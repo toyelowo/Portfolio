@@ -4,6 +4,7 @@ $nav-font-size: 24px;
 .Nav {
   display: grid;
   grid-template-columns: 1fr auto;
+  align-items: center;
   margin-top: 10px;
 
   color: var(--main-text);
@@ -22,12 +23,16 @@ $nav-font-size: 24px;
 }
 
 .Nav__List {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  display: none;
 
-  font-size: $nav-font-size;
-  list-style-type: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    font-size: $nav-font-size;
+    list-style-type: none;
+  }
 }
 
 .Nav__List__item {
@@ -35,5 +40,19 @@ $nav-font-size: 24px;
 
   &:hover {
     color: var(--button-hover);
+  }
+}
+
+.ModalOpenButton {
+  border: none;
+  background: transparent;
+  color: var(--main-text);
+  cursor: pointer;
+  font-size: 24px;
+  height: 25px;
+  width: 25px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 }

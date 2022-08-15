@@ -1,8 +1,14 @@
+import { useContext } from 'react';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 import styles from '/styles/Navbar.module.scss';
+import { ModalCtx } from '../../store';
 
 export function Navbar() {
+  const {openModal} = useContext(ModalCtx);
+
   return (
     <nav className={styles.Nav}>
       <h2 className={styles.Nav__title}>
@@ -25,6 +31,10 @@ export function Navbar() {
           <Link href="/contact"><a>Contact</a></Link>
         </li>
       </ul>
+
+      <button className={styles.ModalOpenButton} onClick={openModal}>
+        <FontAwesomeIcon icon={faBars} />
+      </button>
     </nav>
   )
 }

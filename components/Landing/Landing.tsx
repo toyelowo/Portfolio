@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faLightbulb } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
 
 import {Navbar} from '../Navbar';

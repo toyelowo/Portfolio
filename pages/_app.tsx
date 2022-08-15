@@ -1,12 +1,15 @@
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app';
 
-import {ThemeProvider} from '../store';
+import {ModalProvider, ThemeProvider} from '../store';
+import {Modal} from '../components';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
-      <Component {...pageProps} />
+      <ModalProvider>
+        <Component {...pageProps} />
+      </ModalProvider>
     </ThemeProvider>
   );
 }
