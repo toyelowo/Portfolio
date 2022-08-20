@@ -46,68 +46,75 @@ export function Modal() {
     } else {
       document.body.style.overflow = 'unset';
     }
+
+    () => (document.body.style.overflow = 'unset');
   }, [isModalOpen]);
+
+  // if (!isModalOpen) {
+  //   return null;
+  // }
 
   return (
     <div
       className={`${styles.ModalWrapper} ${
         isModalOpen ? '' : styles.hideModal
       }`}
-      ref={modalWrapperRef}
     >
-      <div className={styles.Heading}>
-        <h3 className={styles.Heading__title}>
-          <Link href="/">
-            <a>Explore my portfolio</a>
-          </Link>
-        </h3>
+      <div className={styles.Modal} ref={modalWrapperRef}>
+        <div className={styles.Heading}>
+          <h3 className={styles.Heading__title}>
+            <Link href="/">
+              <a>Explore my portfolio</a>
+            </Link>
+          </h3>
 
-        <button className={styles.CloseModalButton} onClick={closeModal}>
-          X
-        </button>
-      </div>
-      <div>
-        <ul className={styles.NavWrapper}>
-          {MODAL_OPTIONS.map((option) => (
-            <li
-              key={option.title}
-              className={`${styles.Nav__List__item} ${getActiveClassName(
-                option.link
-              )}`}
-            >
-              <Link href={option.link}>
-                <a>{option.title}</a>
-              </Link>
+          <button className={styles.CloseModalButton} onClick={closeModal}>
+            X
+          </button>
+        </div>
+        <div>
+          <ul className={styles.NavWrapper}>
+            {MODAL_OPTIONS.map((option) => (
+              <li
+                key={option.title}
+                className={`${styles.Nav__List__item} ${getActiveClassName(
+                  option.link
+                )}`}
+              >
+                <Link href={option.link}>
+                  <a>{option.title}</a>
+                </Link>
+              </li>
+            ))}
+            <li className={styles.ThemeWrapper}>
+              <button
+                className={styles.ThemeButton}
+                onClick={themeCtx.toggleTheme}
+              >
+                <FontAwesomeIcon
+                  icon={faLightbulb}
+                  className={styles.ThemeIcon}
+                />
+              </button>
+
+              <p className={styles.Theme}>{themeCtx.theme}</p>
             </li>
-          ))}
-          <li className={styles.ThemeWrapper}>
-            <button
-              className={styles.ThemeButton}
-              onClick={themeCtx.toggleTheme}
-            >
-              <FontAwesomeIcon
-                icon={faLightbulb}
-                className={styles.ThemeIcon}
-              />
-            </button>
+          </ul>
+        </div>
 
-            <p className={styles.Theme}>{themeCtx.theme}</p>
-          </li>
-        </ul>
-      </div>
+        <div className={styles.Footer}>
+          <ul className={styles.Socials}>
+            {SOCIALS.map((social) => (
+              <li key={social.title} className={styles.Socials__List_Item}>
+                <a href={social.link} rel="noreferrer" target="_blank">
+                  {social.title}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-      <div className={styles.Footer}>
-        <ul className={styles.Socials}>
-          {SOCIALS.map((social) => (
-            <li key={social.title} className={styles.Socials__List_Item}>
-              <a href={social.link} rel="noreferrer" target="_blank">
-                {social.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        <p className={styles.Name}>Temitayo Oyelowo</p>
+          <p className={styles.Name}>Temitayo Oyelowo</p>
+        </div>
       </div>
     </div>
   );

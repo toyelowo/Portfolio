@@ -13,28 +13,21 @@ export function Landing() {
   return (
     <Page className={styles.LandingWrapper}>
       <Navbar />
-      <div className={styles.DescriptionWrapper}>
-        <div className={styles.DescriptionInnerWrapper}>
-          <div className={styles.Description}>
-            <p>
-              I’m a software engineer specializing in building (and occasionally
-              designing) exceptional digital experiences. Currently, I’m focused
-              on building accessible, human-centered products at Shopify.
-            </p>
-          </div>
-          <div className={styles.ThemeWrapper}>
-            <button
-              className={styles.ThemeButton}
-              onClick={themeCtx.toggleTheme}
-            >
-              <FontAwesomeIcon
-                icon={faLightbulb}
-                className={styles.ThemeIcon}
-              />
-            </button>
 
-            <p className={styles.Theme}>{themeCtx.theme}</p>
-          </div>
+      <div className={styles.DescriptionWrapper}>
+        <div className={styles.Description}>
+          <p>
+            I’m a software engineer specializing in building (and occasionally
+            designing) exceptional digital experiences. Currently, I’m focused
+            on building accessible, human-centered products at Shopify.
+          </p>
+        </div>
+        <div className={styles.ThemeWrapper}>
+          <button className={styles.ThemeButton} onClick={themeCtx.toggleTheme}>
+            <FontAwesomeIcon icon={faLightbulb} className={styles.ThemeIcon} />
+          </button>
+
+          <p className={styles.Theme}>{themeCtx.theme}</p>
         </div>
       </div>
 

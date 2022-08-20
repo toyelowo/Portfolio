@@ -1,5 +1,5 @@
 .Page {
-  min-height: 100vh;
+  min-height: max(667px, 100vh);
   min-width: 100vw;
   padding: 0 30px;
   background-color: var(--main-bg);
