@@ -38,7 +38,10 @@ export function Navbar() {
         </li>
       </ul>
 
-      <button className={styles.ModalOpenButton} onClick={openModal}>
+      <button
+        className={styles.ModalOpenButton}
+        onClick={(e) => openModal(e.currentTarget)}
+      >
         <FontAwesomeIcon icon={faBars} />
       </button>
     </nav>

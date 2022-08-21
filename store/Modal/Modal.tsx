@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, MouseEvent } from 'react';
 
 interface Props {
   children: React.ReactNode;
@@ -6,15 +6,31 @@ interface Props {
 
 export const ModalCtx = createContext({
   isModalOpen: false,
-  openModal: () => {},
+  openModal: (_: HTMLButtonElement) => {},
   closeModal: () => {}
 });
 
 export function ModalProvider({ children }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activatorButton, setActivatorButton] =
+    useState<HTMLButtonElement | null>(null);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  /**
+   *
+   * @param parentButton: button that triggers the open modal
+   */
+  const openModal = (parentButton: HTMLButtonElement) => {
+    setIsModalOpen(true);
+    setActivatorButton(parentButton);
+  };
+
+  /**
+   * focuses the activator button on modal close (for accessibility)
+   */
+  const closeModal = () => {
+    setIsModalOpen(false);
+    activatorButton?.focus();
+  };
 
   return (
     <ModalCtx.Provider value={{ isModalOpen, openModal, closeModal }}>

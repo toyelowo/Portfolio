@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef, KeyboardEvent } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,10 +6,6 @@ import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
 
 import styles from '../../styles/Modal.module.scss';
 import { ThemeCtx, ModalCtx } from '../../store';
-
-interface Props {
-  children: React.ReactNode;
-}
 
 const MODAL_OPTIONS = [
   { title: 'Intro', link: '/' },
@@ -24,25 +20,23 @@ const SOCIALS = [
 ];
 
 export function Modal() {
-  /*
-    TODO: Implement focus trap:
-    add two refs -> start tab and end tab
-
-    if last ref has been reached go first ref
-    if shift tab is pressed on first ref go to last ref
-  */
   const themeCtx = useContext(ThemeCtx);
   const { closeModal, isModalOpen } = useContext(ModalCtx);
   const modalWrapperRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
+  const firstFocusableElementRef = useRef<HTMLAnchorElement | null>(null);
+  const lastFocusableElementRef = useRef<HTMLAnchorElement | null>(null);
+
   /*
     Prevent scrolling in element behind the Modal when modal is open
+    Also, focus first element when modal opens (to comply with accessibility requirements)
   */
   useEffect(() => {
     modalWrapperRef.current?.scrollIntoView({ behavior: 'smooth' });
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
+      firstFocusableElementRef.current?.focus();
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -50,21 +44,53 @@ export function Modal() {
     () => (document.body.style.overflow = 'unset');
   }, [isModalOpen]);
 
-  // if (!isModalOpen) {
-  //   return null;
-  // }
+  if (!isModalOpen) {
+    return null;
+  }
+
+  /*
+    1. Escape button closes the modal
+    2. Handles focus trap:  
+      - if lastFocusableElementRef is reached during regular tabination to to go first ref
+      - if firstFocusableElementRef is reached during regular tabination to to go last ref
+  */
+  function handleOnKeyDown(e: KeyboardEvent<HTMLElement>) {
+    if (e.key === 'Escape') {
+      closeModal();
+      return;
+    }
+
+    if (
+      e.key === 'Tab' &&
+      !e.shiftKey &&
+      e.target === lastFocusableElementRef.current
+    ) {
+      firstFocusableElementRef.current?.focus();
+      e.preventDefault();
+    } else if (
+      e.key === 'Tab' &&
+      e.shiftKey &&
+      e.target === firstFocusableElementRef.current
+    ) {
+      lastFocusableElementRef.current?.focus();
+      e.preventDefault();
+    }
+  }
 
   return (
     <div
       className={`${styles.ModalWrapper} ${
         isModalOpen ? '' : styles.hideModal
       }`}
+      onKeyDown={handleOnKeyDown}
+      role="dialog"
+      aria-labelledby="modal--title"
     >
       <div className={styles.Modal} ref={modalWrapperRef}>
         <div className={styles.Heading}>
-          <h3 className={styles.Heading__title}>
+          <h3 className={styles.Heading__title} id="modal--title">
             <Link href="/">
-              <a>Explore my portfolio</a>
+              <a ref={firstFocusableElementRef}>Explore my portfolio</a>
             </Link>
           </h3>
 
@@ -104,9 +130,16 @@ export function Modal() {
 
         <div className={styles.Footer}>
           <ul className={styles.Socials}>
-            {SOCIALS.map((social) => (
+            {SOCIALS.map((social, idx) => (
               <li key={social.title} className={styles.Socials__List_Item}>
-                <a href={social.link} rel="noreferrer" target="_blank">
+                <a
+                  href={social.link}
+                  rel="noreferrer"
+                  target="_blank"
+                  ref={
+                    idx === SOCIALS.length - 1 ? lastFocusableElementRef : null
+                  }
+                >
                   {social.title}
                 </a>
               </li>
