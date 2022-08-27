@@ -84,9 +84,6 @@ function ModalInner() {
         isModalOpen ? '' : styles.hideModal
       }`}
       onKeyDown={handleOnKeyDown}
-      aria-hidden="false"
-      aria-labelledby="modal--title"
-      role="dialog"
     >
       <div className="modal-screenreader-description" id="modalDescription">
         This is a modal that can be used to navigate to another page or set the
