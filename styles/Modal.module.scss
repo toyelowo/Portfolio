@@ -23,6 +23,13 @@
   justify-content: space-between;
 }
 
+.Modal-screenreader-description {
+  position: absolute;
+  left: -1000px;
+  width: 1px;
+  height: 1px;
+}
+
 .Heading {
   margin-top: 30px;
   margin-bottom: 30px;

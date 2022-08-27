@@ -1,4 +1,5 @@
-import { useContext, useEffect, useRef, KeyboardEvent } from 'react';
+import { useContext, useEffect, useRef, useState, KeyboardEvent } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,7 +20,7 @@ const SOCIALS = [
   { title: 'Twitter', link: 'https://www.twitter.com' }
 ];
 
-export function Modal() {
+function ModalInner() {
   const themeCtx = useContext(ThemeCtx);
   const { closeModal, isModalOpen } = useContext(ModalCtx);
   const modalWrapperRef = useRef<HTMLDivElement>(null);
@@ -83,11 +84,18 @@ export function Modal() {
         isModalOpen ? '' : styles.hideModal
       }`}
       onKeyDown={handleOnKeyDown}
-      role="dialog"
+      aria-hidden="false"
       aria-labelledby="modal--title"
+      role="dialog"
     >
+      <div className="modal-screenreader-description" id="modalDescription">
+        This is a modal that can be used to navigate to another page or set the
+        theme (light mode or dark mode). Pressing the Close Modal button at the
+        will close the modal and return you to the button that triggered the
+        modal.
+      </div>
       <div className={styles.Modal} ref={modalWrapperRef}>
-        <div className={styles.Heading}>
+        <header className={styles.Heading}>
           <h3 className={styles.Heading__title} id="modal--title">
             <Link href="/">
               <a ref={firstFocusableElementRef}>Explore my portfolio</a>
@@ -97,7 +105,8 @@ export function Modal() {
           <button className={styles.CloseModalButton} onClick={closeModal}>
             X
           </button>
-        </div>
+        </header>
+
         <div>
           <ul className={styles.NavWrapper}>
             {MODAL_OPTIONS.map((option) => (
@@ -128,7 +137,7 @@ export function Modal() {
           </ul>
         </div>
 
-        <div className={styles.Footer}>
+        <footer className={styles.Footer}>
           <ul className={styles.Socials}>
             {SOCIALS.map((social, idx) => (
               <li key={social.title} className={styles.Socials__List_Item}>
@@ -147,7 +156,7 @@ export function Modal() {
           </ul>
 
           <p className={styles.Name}>Temitayo Oyelowo</p>
-        </div>
+        </footer>
       </div>
     </div>
   );
@@ -155,4 +164,16 @@ export function Modal() {
   function getActiveClassName(href: string) {
     return router.pathname === href ? styles['Nav__List__item--active'] : '';
   }
+}
+
+export function Modal() {
+  const [modalElement, setModalElement] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    setModalElement(document.getElementById('modal-root'));
+  }, [modalElement]);
+
+  return (
+    <>{modalElement ? createPortal(<ModalInner />, modalElement) : null}</>
+  );
 }

@@ -1,32 +1,32 @@
 $theme-colors: (
-  "light": (
-    "button-hover": #b15601,
-    "header-text": #111111,
-    "main-bg": #fafafa,
-    "main-text": #323232,
-    "primary-00": #323232,
-    "primary-10": #2a2a2a,
-    "primary-20": #3c5343,
-    "primary-30": #191919,
-    "primary-40": #111111,
-    "primary-50": #0a0a0a,
-    "secondary-text": #525050,
-    "theme-icon": #575151,
+  'light': (
+    'button-hover': #b15601,
+    'header-text': #111111,
+    'main-bg': #fafafa,
+    'main-text': #323232,
+    'primary-00': #323232,
+    'primary-10': #2a2a2a,
+    'primary-20': #3c5343,
+    'primary-30': #191919,
+    'primary-40': #111111,
+    'primary-50': #0a0a0a,
+    'secondary-text': #525050,
+    'theme-icon': #575151
   ),
-  "dark": (
-    "button-hover": #ee7402,
-    "header-text": #cacaca,
-    "main-bg": #121212,
-    "main-text": #bdbdbd,
-    "primary-00": #323232,
-    "primary-10": #545454,
-    "primary-20": #767676,
-    "primary-30": #989898,
-    "primary-40": #bbbbbb,
-    "primary-50": #d6d6d6,
-    "secondary-text": #939393,
-    "theme-icon": #d3d3d3,
-  ),
+  'dark': (
+    'button-hover': #ee7402,
+    'header-text': #cacaca,
+    'main-bg': #121212,
+    'main-text': #bdbdbd,
+    'primary-00': #323232,
+    'primary-10': #545454,
+    'primary-20': #767676,
+    'primary-30': #989898,
+    'primary-40': #bbbbbb,
+    'primary-50': #d6d6d6,
+    'secondary-text': #939393,
+    'theme-icon': #d3d3d3
+  )
 );
 
 // credit to https://www.thisdot.co/blog/how-to-implement-a-dark-to-light-mode-feature-in-your-react-sass-project
@@ -41,9 +41,9 @@ $theme-colors: (
 }
 
 .dark-mode {
-  @include get-themes("dark");
+  @include get-themes('dark');
 }
 
 .light-mode {
-  @include get-themes("light");
+  @include get-themes('light');
 }

@@ -1,16 +1,26 @@
 import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
+import { useContext } from 'react';
 
-import { ModalProvider, ThemeProvider } from '../store';
+import { ModalProvider, ThemeProvider, ThemeCtx, ThemeEnum } from '../store';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
       <ModalProvider>
+        <ModalRoot />
         <Component {...pageProps} />
       </ModalProvider>
     </ThemeProvider>
   );
+}
+
+function ModalRoot() {
+  const themeCtx = useContext(ThemeCtx);
+  const themeClass =
+    themeCtx.theme === ThemeEnum.Light ? 'light-mode' : 'dark-mode';
+
+  return <div id="modal-root" className={themeClass} />;
 }
 
 export default MyApp;
