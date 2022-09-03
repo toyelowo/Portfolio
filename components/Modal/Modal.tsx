@@ -85,11 +85,10 @@ function ModalInner() {
       }`}
       onKeyDown={handleOnKeyDown}
     >
-      <div className="modal-screenreader-description" id="modalDescription">
+      <div className="Modal-screenreader-description" id="modalDescription">
         This is a modal that can be used to navigate to another page or set the
-        theme (light mode or dark mode). Pressing the Close Modal button at the
-        will close the modal and return you to the button that triggered the
-        modal.
+        theme (light mode or dark mode). Pressing the close modal button will
+        close the modal and return you to the button that triggered the modal.
       </div>
       <div className={styles.Modal} ref={modalWrapperRef}>
         <header className={styles.Heading}>
@@ -99,7 +98,11 @@ function ModalInner() {
             </Link>
           </h3>
 
-          <button className={styles.CloseModalButton} onClick={closeModal}>
+          <button
+            className={styles.CloseModalButton}
+            onClick={closeModal}
+            aria-label="Close modal"
+          >
             X
           </button>
         </header>
@@ -122,6 +125,7 @@ function ModalInner() {
               <button
                 className={styles.ThemeButton}
                 onClick={themeCtx.toggleTheme}
+                aria-label="Toggle theme"
               >
                 <FontAwesomeIcon
                   icon={faLightbulb}

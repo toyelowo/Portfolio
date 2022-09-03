@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
 
-import { Navbar } from '../Navbar';
 import { ThemeCtx } from '../../store';
 import { Page } from '../ui';
 import styles from '/styles/Landing.module.scss';
@@ -12,8 +11,6 @@ export function Landing() {
 
   return (
     <Page className={styles.LandingWrapper}>
-      <Navbar />
-
       <div className={styles.DescriptionWrapper}>
         <div className={styles.Description}>
           <p>

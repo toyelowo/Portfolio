@@ -6,10 +6,6 @@ import { About as AboutMe } from '../components';
 import { ModalCtx } from '../store';
 
 const About: NextPage = () => {
-  const modalCtx = useContext(ModalCtx);
-
-  const ariaHiddenKey = modalCtx.isModalOpen ? 'true' : 'false';
-
   return (
     <>
       <Head>
@@ -21,9 +17,7 @@ const About: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main aria-hidden={ariaHiddenKey}>
-        <AboutMe />
-      </main>
+      <AboutMe />
     </>
   );
 };

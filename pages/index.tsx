@@ -12,11 +12,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <LandingPageWrapper>
-          <LandingPage />
-        </LandingPageWrapper>
-      </main>
+      <LandingPage />
     </>
   );
 };

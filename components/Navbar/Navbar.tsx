@@ -39,6 +39,7 @@ export function Navbar() {
       </ul>
 
       <button
+        aria-label="open modal"
         className={styles.ModalOpenButton}
         onClick={(e) => openModal(e.currentTarget)}
       >

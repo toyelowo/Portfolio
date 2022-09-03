@@ -28,16 +28,13 @@ function ModalRoot() {
   const themeClass =
     themeCtx.theme === ThemeEnum.Light ? 'light-mode' : 'dark-mode';
 
-  if (!modalCtx.isModalOpen) {
-    return <div id="modal-root" aria-hidden="false" className={themeClass} />;
-  }
-
   return (
     <div
       id="modal-root"
-      aria-hidden="false"
+      aria-hidden={!modalCtx.isModalOpen}
       aria-labelledby="modal--title"
       role="dialog"
+      className={themeClass}
     />
   );
 }

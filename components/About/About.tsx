@@ -1,4 +1,3 @@
-import { Navbar } from '../Navbar';
 import { Page } from '../ui';
 import styles from '/styles/About.module.scss';
 
@@ -18,7 +17,6 @@ const skills = [
 export function About() {
   return (
     <Page>
-      <Navbar />
       <div className={styles.TwoColumnWrapper}>
         <div className={styles.LeftColumn}>
           <h2 className={styles.title}>About</h2>

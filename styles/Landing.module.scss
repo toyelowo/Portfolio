@@ -1,11 +1,11 @@
 .LandingWrapper {
-  background-color: var(--main-bg);
-  min-height: 100%;
-  width: 100%;
+  // background-color: var(--main-bg);
+  // min-height: 100%;
+  // width: 100%;
 
-  position: absolute;
-  top: 0;
-  left: 0;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
 
   // animation-name: door-animation;
   // animation-duration: 5s;
@@ -14,13 +14,16 @@
   // display: grid;
   // grid-template-rows: auto 40vh 1fr;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0 30px;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  // padding: 20px 30px;
 
-  padding-top: 20px;
-  padding-bottom: 20px;
+  display: grid;
+  grid-template-rows: 40vh 1fr;
+  row-gap: 50px;
+  align-items: flex-end;
+  padding-bottom: 30px;
 }
 
 @keyframes door-animation {
