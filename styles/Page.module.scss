@@ -1,10 +1,12 @@
 .Page {
-  min-height: 100vh;
-  min-width: 100vw;
+  min-height: max(667px, 100vh);
+  min-width: max(385px, 100vw);
   padding: 0 30px;
   background-color: var(--main-bg);
 
   display: grid;
   grid-template-rows: auto 1fr;
   grid-gap: 50px;
+  position: relative;
+  padding-top: 25px;
 }

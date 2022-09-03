@@ -1,7 +1,12 @@
 .TwoColumnWrapper {
   display: grid;
-  grid-template-columns: 20vw 1fr;
+  grid-template-rows: auto 1fr;
+  grid-gap: 10px;
   min-height: 100%;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 20vw 1fr;
+  }
 }
 
 .RightColumn {
@@ -27,15 +32,19 @@
 
   color: var(--header-text);
   margin-bottom: 40px;
+  word-wrap: break-word;
 }
 
 .description {
   font-weight: 300;
   font-size: 24px;
   line-height: 36px;
-
   color: var(--main-text);
-  width: 50%;
+  word-break: break-word;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 }
 
 .SkillsWrapper {
@@ -49,10 +58,14 @@
 
 .Skills {
   display: grid;
-  grid-template-columns: repeat(3, max-content);
+  grid-template-columns: repeat(2, max-content);
   column-gap: 40px;
   row-gap: 25px;
   margin-bottom: 30px;
 
   list-style: disclosure-closed inside;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, max-content);
+  }
 }

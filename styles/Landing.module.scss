@@ -1,19 +1,29 @@
 .LandingWrapper {
-  background-color: var(--main-bg);
-  height: 100%;
-  width: 100%;
+  // background-color: var(--main-bg);
+  // min-height: 100%;
+  // width: 100%;
 
-  position: absolute;
-  top: 0;
-  left: 0;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
 
   // animation-name: door-animation;
   // animation-duration: 5s;
   // animation-timing-function: linear;
 
+  // display: grid;
+  // grid-template-rows: auto 40vh 1fr;
+
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  // padding: 20px 30px;
+
   display: grid;
-  grid-template-rows: auto 40vh 1fr;
-  padding: 0 30px;
+  grid-template-rows: 40vh 1fr;
+  row-gap: 50px;
+  align-items: flex-end;
+  padding-bottom: 30px;
 }
 
 @keyframes door-animation {
@@ -27,14 +37,15 @@
 
 .DescriptionWrapper {
   display: flex;
-  flex-direction: column-reverse;
-}
+  flex-direction: column;
+  row-gap: 10px;
 
-.DescriptionInnerWrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+  }
 }
 
 .Description {
@@ -45,20 +56,41 @@
   color: var(--secondary-text);
 }
 
-.LightModeWrapper {
+.ThemeWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: var(--secondary-text);
 }
 
-.LightMode {
+.ThemeButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 5px;
+  height: 40px;
+}
+
+.ThemeIcon {
+  height: 100%;
+  color: var(--theme-icon);
+}
+
+.Theme {
   text-transform: uppercase;
+  text-align: center;
 }
 
 .FooterWrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  row-gap: 10px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .FooterWrapper__name__description__prefix {
@@ -68,10 +100,10 @@
 }
 
 .FooterWrapper__name__description__fullName {
+  word-break: break-word;
   text-transform: uppercase;
   font-size: 50px;
   font-weight: 400;
-  line-height: 36px;
   color: var(--header-text);
 }
 
@@ -79,15 +111,5 @@
   height: 100%;
   display: flex;
   align-items: center;
-  color: var(--main-text);
-}
-
-.LightModeIcon {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.LightMode {
   color: var(--main-text);
 }
