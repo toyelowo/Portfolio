@@ -7,17 +7,13 @@ import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
 
 import styles from '../../styles/Modal.module.scss';
 import { ThemeCtx, ModalCtx } from '../../store';
+import { SOCIALS } from '../utilities';
 
 const MODAL_OPTIONS = [
   { title: 'Intro', link: '/' },
   { title: 'About', link: '/about' },
   { title: 'Work', link: '/work' },
   { title: 'Contact', link: '/contact' }
-];
-const SOCIALS = [
-  { title: 'Linkedin', link: 'https://www.linkedin.com' },
-  { title: 'Github', link: 'https://www.github.com/toyelowo' },
-  { title: 'Twitter', link: 'https://www.twitter.com' }
 ];
 
 function ModalInner() {

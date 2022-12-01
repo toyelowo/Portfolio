@@ -1,9 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useContext } from 'react';
 
 import { About as AboutMe } from '../components';
-import { ModalCtx } from '../store';
 
 const About: NextPage = () => {
   return (

@@ -1,6 +1,8 @@
 $theme-colors: (
   'light': (
     'button-hover': #b15601,
+    'primary-button-text': #ffffff,
+    'secondary-button-text': #111111,
     'header-text': #111111,
     'main-bg': #fafafa,
     'main-text': #323232,
@@ -11,10 +13,13 @@ $theme-colors: (
     'primary-40': #111111,
     'primary-50': #0a0a0a,
     'secondary-text': #525050,
-    'theme-icon': #575151
+    'theme-icon': #575151,
+    'email': #d63838
   ),
   'dark': (
     'button-hover': #ee7402,
+    'primary-button-text': #0a0a0a,
+    'secondary-button-text': #cacaca,
     'header-text': #cacaca,
     'main-bg': #121212,
     'main-text': #bdbdbd,
@@ -25,7 +30,8 @@ $theme-colors: (
     'primary-40': #bbbbbb,
     'primary-50': #d6d6d6,
     'secondary-text': #939393,
-    'theme-icon': #d3d3d3
+    'theme-icon': #d3d3d3,
+    'email': #d63838
   )
 );
 

@@ -1,0 +1,56 @@
+.TwoColumnWrapper {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-gap: 10px;
+  min-height: 100%;
+  color: var(--main-text);
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 60vw 1fr;
+  }
+}
+
+.title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+
+  text-transform: uppercase;
+  color: var(--primary-50);
+  margin-bottom: 80px;
+}
+
+.LeftColumn {
+  color: var(--main-text);
+  font-size: 24px;
+  word-break: break-word;
+}
+
+// .description {
+//   color: var(--main-text);
+//   font-size: 24px;
+//   word-break: break-word;
+// }
+
+.email {
+  color: var(--email);
+}
+
+.RightColumn {
+  color: var(--main-text);
+  font-size: 24px;
+  word-break: break-word;
+}
+
+.Socials {
+  list-style: none;
+  display: flex;
+  column-gap: 10px;
+}
+
+.LeftColumnInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100%;
+}
