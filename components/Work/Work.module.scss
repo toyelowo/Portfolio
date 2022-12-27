@@ -1,40 +1,57 @@
-.TwoColumnWrapper {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  grid-gap: 10px;
-  min-height: 100%;
-  color: var(--main-text);
+// .TwoColumnWrapper {
+//   display: grid;
+//   grid-template-rows: auto 1fr;
+//   grid-gap: 10px;
+//   min-height: 100%;
+//   color: var(--main-text);
 
-  @media screen and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+//   @media screen and (min-width: 768px) {
+//     grid-template-columns: 1fr 1fr;
+//     grid-gap: 50px;
+//   }
+// }
 
-.title {
+.SectionTitle {
   font-weight: 400;
   font-size: 24px;
   line-height: 120%;
+  margin-bottom: 76px;
 
   text-transform: uppercase;
   color: var(--primary-50);
 }
 
-.ProjectDescription {
-  margin-bottom: 40px;
-}
+// .ProjectDescription {
+//   margin-bottom: 80px;
+// }
 
-.ProjectButton {
-  padding: 12px 24px;
-}
+// .ProjectButton {
+//   padding: 12px 24px;
+// }
 
-.ViewSiteButton {
-  background: var(--header-text);
-  color: var(--primary-button-text);
+// .ViewSiteButton {
+//   background: var(--header-text);
+//   color: var(--primary-button-text);
 
-  margin-right: 20px;
-}
+//   margin-right: 20px;
+// }
 
-.GitHubButton {
-  border: var(--header-text) 1px solid;
-  color: var(--secondary-button-text);
-}
+// .GitHubButton {
+//   border: var(--header-text) 1px solid;
+//   color: var(--secondary-button-text);
+// }
+
+// .ProjectTitle {
+//   color: var(--header-text);
+//   font-size: 60px;
+//   margin-bottom: 48px;
+// }
+
+// .description {
+//   font-size: 24px;
+//   color: var(--main-text);
+// }
+
+// .RightColumn {
+//   text-align: right;
+// }

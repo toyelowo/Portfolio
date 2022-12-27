@@ -1,6 +1,8 @@
 import _uniqueId from 'lodash/uniqueId';
 import React, { useState } from 'react';
 
+import styles from './Button.module.scss';
+
 interface RegularButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 interface Link extends React.HTMLProps<HTMLAnchorElement> {}
@@ -27,7 +29,7 @@ export function Button(props: Props) {
 
     return (
       <>
-        <a {...linkProps} className={className}>
+        <a {...linkProps} className={`${styles.Button} ${className}`}>
           {children}
         </a>
         {describedBy ? <p id={describedById}>{describedBy}</p> : null}
@@ -38,7 +40,7 @@ export function Button(props: Props) {
   const { children, describedBy, className, ...defaultButtonProps } = props;
 
   return (
-    <button {...defaultButtonProps} className={className}>
+    <button {...defaultButtonProps} className={`${styles.Button} ${className}`}>
       {children}
     </button>
   );

@@ -15,6 +15,10 @@ $nav-font-size: 24px;
   font-size: $nav-font-size;
   font-weight: $nav-font-weight;
   line-height: 32.4px;
+
+  &:hover {
+    color: var(--button-hover);
+  }
 }
 
 .Nav__title--span {

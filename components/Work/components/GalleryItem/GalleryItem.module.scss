@@ -1,0 +1,47 @@
+.TwoColumnWrapper {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-gap: 10px;
+  min-height: 100%;
+  color: var(--main-text);
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+  }
+}
+
+.ProjectDescription {
+  margin-bottom: 80px;
+}
+
+.ProjectButton {
+  padding: 12px 24px;
+}
+
+.ViewSiteButton {
+  background: var(--header-text);
+  color: var(--primary-button-text);
+
+  margin-right: 20px;
+}
+
+.GitHubButton {
+  border: var(--header-text) 1px solid;
+  color: var(--secondary-button-text);
+}
+
+.ProjectTitle {
+  color: var(--header-text);
+  font-size: 60px;
+  margin-bottom: 48px;
+}
+
+.description {
+  font-size: 24px;
+  color: var(--main-text);
+}
+
+.RightColumn {
+  text-align: right;
+}
