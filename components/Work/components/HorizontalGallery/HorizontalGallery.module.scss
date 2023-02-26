@@ -1,27 +1,19 @@
-.container {
-  width: 100%;
-  // height: 100%;
-  scroll-snap-type: x mandatory;
-  // overflow-x: scroll;
-  overflow-x: scroll;
-  display: flex;
-
-  div {
-    flex: none; // don't shrink page
-    scroll-snap-align: start;
-    // max-width: 100%;
-    // height: 100%;
-    // scroll-margin-left: 100px;
-  }
+.HorizontalGallery {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 10px;
+  align-items: center;
 }
 
-// /* Hide scrollbar for Chrome, Safari and Opera */
-// .container::-webkit-scrollbar {
-//   display: none;
-// }
+.GalleryDirectionButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 5px;
+  height: 40px;
+}
 
-// /* Hide scrollbar for IE, Edge and Firefox */
-// .container {
-//   -ms-overflow-style: none; /* IE and Edge */
-//   scrollbar-width: none; /* Firefox */
-// }
+.GalleryDirectionIcon {
+  height: 100%;
+  color: var(--theme-icon);
+}
