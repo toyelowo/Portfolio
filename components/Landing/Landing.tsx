@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
+import { faCircleArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 import { ThemeCtx } from '../../store';
 import { Page } from '../ui';
@@ -38,7 +39,13 @@ export function Landing() {
           </span>
         </div>
         <div className={styles.FooterWrapper__button}>
-          <p>Scroll Down</p>
+          <p className={styles.FooterWrapper_button_text}>Scroll Down</p>
+          <button className={styles.ThemeButton}>
+            <FontAwesomeIcon
+              icon={faCircleArrowDown}
+              className={styles.ThemeIcon}
+            />
+          </button>
         </div>
       </div>
     </Page>

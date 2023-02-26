@@ -17,13 +17,18 @@
 
   text-transform: uppercase;
   color: var(--primary-50);
-  margin-bottom: 80px;
+  // height: 10%;
+  // margin-bottom: 80px;
 }
 
 .LeftColumn {
   color: var(--main-text);
   font-size: 24px;
   word-break: break-word;
+
+  display: grid;
+  grid-template-rows: 90px 1fr;
+  height: 100%;
 }
 
 // .description {
@@ -46,11 +51,29 @@
   list-style: none;
   display: flex;
   column-gap: 10px;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 768px) {
+    :not(:last-child) {
+      margin-right: 24px;
+    }
+  }
+}
+
+.Socials__List_Item {
+  ::after {
+    content: '.';
+  }
+}
+
+.SocialsWrapper {
+  margin-bottom: 50px;
 }
 
 .LeftColumnInner {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  min-height: 100%;
+  justify-content: space-between;
+  // min-height: 100%;
+  // height: 90%;
 }

@@ -24,34 +24,36 @@ export function GalleryItem({
   image
 }: Props) {
   return (
-    <div className={styles.TwoColumnWrapper}>
-      <div className={styles.LeftColumn}>
-        <div className={styles.ProjectDescription}>
-          <h2 className={styles.ProjectTitle}>{projectTitle}</h2>
-          <p className={styles.description}>{projectDescription}</p>
+    <section className={styles.GalleryItem}>
+      <div className={styles.TwoColumnWrapper}>
+        <div className={styles.LeftColumn}>
+          <div className={styles.ProjectDescription}>
+            <h2 className={styles.ProjectTitle}>{projectTitle}</h2>
+            <p className={styles.description}>{projectDescription}</p>
+          </div>
+
+          <div className={styles.ProjectButtonWrapper}>
+            <Button
+              type="_blank"
+              href={liveSiteLink}
+              className={`${styles.ViewSiteButton} ${styles.ProjectButton}`}
+            >
+              View Site
+            </Button>
+
+            <Button
+              type="_blank"
+              href={githubLink}
+              className={`${styles.GitHubButton} ${styles.ProjectButton}`}
+            >
+              Github
+            </Button>
+          </div>
         </div>
-
-        <div className={styles.ProjectButtonWrapper}>
-          <Button
-            type="_blank"
-            href={liveSiteLink}
-            className={`${styles.ViewSiteButton} ${styles.ProjectButton}`}
-          >
-            View Site
-          </Button>
-
-          <Button
-            type="_blank"
-            href={githubLink}
-            className={`${styles.GitHubButton} ${styles.ProjectButton}`}
-          >
-            Github
-          </Button>
+        <div className={styles.RightColumn}>
+          <Image src={image.src} alt={image.alt} width={650} height={585} />
         </div>
       </div>
-      <div className={styles.RightColumn}>
-        <Image src={image.src} alt={image.alt} width={650} height={585} />
-      </div>
-    </div>
+    </section>
   );
 }

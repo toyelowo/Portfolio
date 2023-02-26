@@ -112,4 +112,12 @@
   display: flex;
   align-items: center;
   color: var(--main-text);
+  flex-direction: column;
+}
+
+.FooterWrapper_button_text {
+  word-break: break-word;
+  text-transform: uppercase;
+  color: var(--main-text);
+  margin-bottom: 5px;
 }

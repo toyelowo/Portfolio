@@ -23,7 +23,7 @@ export function Contact() {
               or connect with me via socials.
             </p>
 
-            <footer className={styles.Footer}>
+            <footer className={styles.SocialsWrapper}>
               <ul className={styles.Socials}>
                 {SOCIALS.map((social, idx) => (
                   <li key={social.title} className={styles.Socials__List_Item}>
@@ -45,7 +45,6 @@ export function Contact() {
             height={750}
           />
         </div>
-        <div></div>
       </div>
     </Page>
   );
